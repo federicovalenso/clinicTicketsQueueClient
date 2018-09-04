@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>icons/book.svg</file>
+        <file>icons/emergency.svg</file>
+        <file>icons/hospital.svg</file>
+        <file>icons/medicine.svg</file>
+        <file>icons/question.svg</file>
+        <file>icons/report.svg</file>
+        <file>icons/vaccine.svg</file>
+        <file>icons/kiosk.svg</file>
+        <file>icons/manoMdcLogo.png</file>
+    </qresource>
+    <qresource prefix="/style">
+        <file>qss/style.qss</file>
+    </qresource>
+    <qresource prefix="/printTemplates">
+        <file>printTemplates/ticket.html</file>
+    </qresource>
+</RCC>
