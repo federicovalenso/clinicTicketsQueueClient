@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include <QTimer>
 #include <QUrl>
 #include <QUrlQuery>
 #include <QNetworkRequest>
@@ -10,8 +9,6 @@
 #include <QMessageBox>
 #include <QTextDocument>
 #include <QDateTime>
-#include <QPrintDialog>
-#include <QPrintPreviewDialog>
 #include <QFile>
 #include <QPainter>
 #include <QKeyEvent>
@@ -55,6 +52,7 @@ MainWindow::MainWindow(QWidget *parent) :
         QString stylesheet = styleFile.readAll();
         setStyleSheet(stylesheet);
     }
+    printBlockingDialog = new PrintBlockingDialog(this);
 }
 
 MainWindow::~MainWindow()
@@ -100,6 +98,7 @@ void MainWindow::printTicket(const QJsonDocument &ticket)
         if (ticketTemplateFile.open(QFile::ReadOnly) == false) {
             qDebug() << "Не найден файл шаблона чека";
         } else {
+            showPrintDialog();
             QJsonObject jsonTicket = ticket.object();
             AppSettings& settings = AppSettings::getInstance();
             int ticketWidth = settings.getTicketWidth();
@@ -123,6 +122,26 @@ void MainWindow::printTicket(const QJsonDocument &ticket)
             docToPrint.print(&printer);
         }
     }
+}
+
+void MainWindow::showPrintDialog()
+{
+    printBlockingDialog->show();
+    setButtonsEnabled(false);
+    QTimer::singleShot(3000, printBlockingDialog, SLOT(hide()));
+    QTimer::singleShot(3000, this, [=](){this->setButtonsEnabled(true);});
+}
+
+void MainWindow::setButtonsEnabled(bool mode)
+{
+    ui->btnBook->setEnabled(mode);
+    ui->btnDisp->setEnabled(mode);
+    ui->btnEmergency->setEnabled(mode);
+    ui->btnOther->setEnabled(mode);
+    ui->btnReceipt->setEnabled(mode);
+    ui->btnReceipt->setEnabled(mode);
+    ui->btnReport->setEnabled(mode);
+    ui->btnVaccine->setEnabled(mode);
 }
 
 void MainWindow::on_btnBook_clicked()

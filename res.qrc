@@ -9,6 +9,7 @@
         <file>icons/vaccine.svg</file>
         <file>icons/kiosk.svg</file>
         <file>icons/manoMdcLogo.png</file>
+        <file>icons/printing-tool.svg</file>
     </qresource>
     <qresource prefix="/style">
         <file>qss/style.qss</file>

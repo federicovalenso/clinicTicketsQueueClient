@@ -27,16 +27,19 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     dlgsettings.cpp \
-    appsettings.cpp
+    appsettings.cpp \
+    printblockingdialog.cpp
 
 HEADERS += \
         mainwindow.h \
     dlgsettings.h \
-    appsettings.h
+    appsettings.h \
+    printblockingdialog.h
 
 FORMS += \
         mainwindow.ui \
-    dlgsettings.ui
+    dlgsettings.ui \
+    printblockingdialog.ui
 
 win32:RC_ICONS += icon.ico
 

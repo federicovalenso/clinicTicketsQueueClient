@@ -7,6 +7,8 @@
 #include <QNetworkAccessManager>
 #include <QJsonDocument>
 #include <QPrinter>
+#include <QTimer>
+#include "printblockingdialog.h"
 
 namespace Ui {
 class MainWindow;
@@ -17,8 +19,8 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+    explicit MainWindow(QWidget *parent = nullptr);
+    ~MainWindow() override;
 
 protected:
     virtual void keyPressEvent(QKeyEvent *event) override;
@@ -46,9 +48,12 @@ private:
     static const QMap<QString, QString> ACTIONS_DESCRIBES;
     Ui::MainWindow *ui;
     QNetworkAccessManager *mNetworkManager;
+    PrintBlockingDialog* printBlockingDialog;
 
     void sendTicketRequest(const QString& action);
     void printTicket(const QJsonDocument& ticket);
+    void showPrintDialog();
+    void setButtonsEnabled(bool mode);
 };
 
 #endif // MAINWINDOW_H

@@ -17,7 +17,7 @@
    <cursorShape>BlankCursor</cursorShape>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Терминал очереди МАНО &quot;ЛДЦ&quot;</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -79,7 +79,7 @@
     <item>
      <widget class="QPushButton" name="btnVaccine">
       <property name="text">
-       <string>Вакцинация (клещ, грип)</string>
+       <string>Вакцинация (клещ, грипп)</string>
       </property>
       <property name="icon">
        <iconset resource="res.qrc">
