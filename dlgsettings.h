@@ -3,26 +3,27 @@
 
 #include <QDialog>
 #include <QString>
+#include <memory>
 #include "appsettings.h"
+#include "ui_dlgsettings.h"
 
 namespace Ui {
 class DlgSettings;
 }
 
-class DlgSettings : public QDialog
-{
-    Q_OBJECT
+class DlgSettings : public QDialog {
+  Q_OBJECT
 
-public:
-    explicit DlgSettings(QWidget *parent = nullptr);
-    ~DlgSettings();
+ public:
+  explicit DlgSettings(QWidget *parent);
+  ~DlgSettings() = default;
 
-private slots:
-    void on_buttonBox_accepted();
+ private slots:
+  void on_buttonBox_accepted();
 
-private:
-    AppSettings& settings_ = AppSettings::getInstance();
-    Ui::DlgSettings *ui;
+ private:
+  AppSettings &settings_ = AppSettings::getInstance();
+  std::unique_ptr<Ui::DlgSettings> ui;
 };
 
-#endif // DLGSETTINGS_H
+#endif  // DLGSETTINGS_H

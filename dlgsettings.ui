@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>326</width>
-    <height>221</height>
+    <width>396</width>
+    <height>271</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -60,6 +60,30 @@
              <widget class="QLineEdit" name="leServer">
               <property name="inputMask">
                <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="lblUser">
+              <property name="text">
+               <string>Пользователь</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="leUser"/>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="lblPass">
+              <property name="text">
+               <string>Пароль</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="lePass">
+              <property name="echoMode">
+               <enum>QLineEdit::Password</enum>
               </property>
              </widget>
             </item>
