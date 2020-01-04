@@ -39,22 +39,23 @@ class MainWindow : public QMainWindow {
   void replyFinished(QNetworkReply *);
 
  private:
-  static const QString ACTION_LOGIN;
-  static const QString ACTION_LOGIN_PATH;
-  static const QString NAME_PARAM;
-  static const QString PASSWORD_PARAM;
-  static const QString TICKET_NUMBER_PARAM;
-  static const QString ACTION_PARAM;
-  static const QString BOOK_ACTION;
-  static const QString DISP_ACTION;
-  static const QString RECEIPT_ACTION;
-  static const QString EMERGENCY_ACTION;
-  static const QString REPORT_ACTION;
-  static const QString VACCINE_ACTION;
-  static const QString OTHER_ACTION;
-  static const QByteArray SET_COOKIE_HEADER;
-  static const QByteArray SESSION_ID;
-  static const QMap<QString, QString> ACTIONS_DESCRIBES;
+  static const QString kLogin;
+  static const QString kLoginPath;
+  static const QString kName;
+  static const QString kPassword;
+  static const QString kTicketNumber;
+  static const QString kAction;
+  static const QString kTicketAction;
+  static const QString kBook;
+  static const QString kDisp;
+  static const QString kReceipt;
+  static const QString kEmergency;
+  static const QString kReport;
+  static const QString kVaccine;
+  static const QString kOther;
+  static const QByteArray kSetCookieHeader;
+  static const QByteArray kSessionId;
+  static const QMap<QString, QString> kActionsDescribes;
 
   std::unique_ptr<Ui::MainWindow> ui_;
   QNetworkAccessManager *network_manager_;
